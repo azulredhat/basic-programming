@@ -20,23 +20,6 @@ try {
 
 /*
 
-============================= [  Throwing Errors  ] =====================================
-    
-*/
-let apiJson = '{ "name" : "Ade Iskandar Zulkarnaen", "married": false }';
-try {
-    let user = JSON.parse(apiJson);
-    if (!user.age) {
-        throw new SyntaxError("'age' is required");
-    }
-    console.log(user.name);
-    console.log(typeof user.married);
-} catch (error) {
-    console.log(`JSON Error: ${error.message}`);
-}
-
-/*
-
 =========================== [  Throwing Errors : instanceof  ] ============================
     
 */
