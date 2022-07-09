@@ -19,9 +19,7 @@ try {
 }
 
 /*
-
 =========================== [  Throwing Errors : instanceof  ] ============================
-    
 */
 let apiJson2 = '{ "name" : "Ade Iskandar Zulkarnaen", "age" :22, "married": false }';
 try {
