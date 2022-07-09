@@ -21,7 +21,7 @@ try {
 /*
 =========================== [  Throwing Errors : instanceof  ] ============================
 */
-let apiJson2 = '{ "name" : "Ade Iskandar Zulkarnaen", "age" :22, "married": false }';
+let apiJson = '{ "name" : "Ade Iskandar Zulkarnaen", "age" :22, "married": false }';
 try {
     let user = JSON.parse(apiJson2);
     if (!user.age) {
