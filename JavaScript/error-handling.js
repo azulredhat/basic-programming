@@ -23,7 +23,7 @@ try {
 */
 let apiJson = '{ "name" : "Ade Iskandar Zulkarnaen", "age" :22, "married": false }';
 try {
-    let user = JSON.parse(apiJson2);
+    let user = JSON.parse(apiJson);
     if (!user.age) {
         throw new SyntaxError("'age' is required");
     }
