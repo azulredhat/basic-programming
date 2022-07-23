@@ -1,34 +1,37 @@
 /*
-=============================== [  Costum Error  ] ==================================
+=============================== [  Custom Error : Network Error  ] ==================================
 */
 
-class costumError extends Error {
-    constructor(message) {
+class NetworkError extends Error{
+    constructor(message){
         super(message);
-        this.name = "costumError";
+        this.name = "ErrorInNetwork";
     }
 }
 
-// let apiJson = '{ "name" : "Ade Iskandar Zulkarnaen", "age" : 22}';
-let apiJson = '{ "name" : "Ade Iskandar Zulkarnaen"}';
-try {
-    let user = JSON.parse(apiJson);
-    if (!user.name) {
-        throw new costumError("'name' is required");
-    }
-    if (!user.age) {
-        throw new costumError("'age' is required");
-    }
-    console.log(user.name);
-    console.log(user.age);
-} catch (error) {
-    if (error instanceof SyntaxError) {
-        console.log(`JSON Error : ${error.message}`);
-    } else if (error instanceof costumError) {
-        console.log(`Invalid data : ${error.message}`);
-    } else if (error instanceof ReferenceError) {
+try{
+    /* conncted status : true || false */
+    const netISP = '{ "ISPname": "TELKOM", "connected" : false }';
+    const NetKantor = JSON.parse(netISP);
+
+    if(!NetKantor.connected){
+        throw new NetworkError("Jaringan Tidak Terhubung");
+    };
+
+    /* 'result' is not defined */
+    result;
+
+}catch(error){
+    if (error instanceof NetworkError){
+        console.log("Error Code    : " + error.name);
+        console.log("Error Message : " + error.message);
+    }else if(error instanceof SyntaxError) {
+        console.log("Error in writing code : " + error.message);
+    }else{
         console.log(error.message);
-    } else {
-        console.log(`Detail error : ${error.stack}`);
     }
+    
+}finally {
+    console.log("====[ this line will always be executed ]====");
 }
+
